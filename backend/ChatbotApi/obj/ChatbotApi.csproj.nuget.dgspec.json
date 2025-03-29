@@ -66,6 +66,10 @@
             "Microsoft.ML.AutoML": {
               "target": "Package",
               "version": "[0.22.2, )"
+            },
+            "Microsoft.ML.OnnxTransformer": {
+              "target": "Package",
+              "version": "[4.0.2, )"
             }
           },
           "imports": [

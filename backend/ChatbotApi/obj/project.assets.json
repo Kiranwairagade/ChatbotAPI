@@ -1208,7 +1208,7 @@
           }
         },
         "build": {
-          "build/netstandard2.0/_._": {}
+          "build/netstandard2.0/Microsoft.ML.OnnxRuntime.Managed.targets": {}
         }
       },
       "Microsoft.ML.OnnxTransformer/4.0.2": {
@@ -5765,7 +5765,8 @@
       "Microsoft.AspNetCore.OpenApi >= 9.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.3",
       "Microsoft.ML >= 4.0.2",
-      "Microsoft.ML.AutoML >= 0.22.2"
+      "Microsoft.ML.AutoML >= 0.22.2",
+      "Microsoft.ML.OnnxTransformer >= 4.0.2"
     ]
   },
   "packageFolders": {
@@ -5834,6 +5835,10 @@
           "Microsoft.ML.AutoML": {
             "target": "Package",
             "version": "[0.22.2, )"
+          },
+          "Microsoft.ML.OnnxTransformer": {
+            "target": "Package",
+            "version": "[4.0.2, )"
           }
         },
         "imports": [
