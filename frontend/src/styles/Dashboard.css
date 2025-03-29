@@ -1,0 +1,11 @@
+/* Dashboard.css */
+.dashboard-container {
+  display: flex; /* 🟢 Flexbox to align sidebar and content */
+  height: 100vh; /* Full height */
+}
+.dashboard-content {
+  flex-grow: 1; /* 🟢 Takes remaining space */
+  padding: 20px;
+  background: #f4f4f4;
+  overflow-y: auto;
+}
