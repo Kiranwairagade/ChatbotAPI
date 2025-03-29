@@ -1,76 +1,134 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Send } from "lucide-react";
-import axios from "axios";
-import "../styles/ChatInterface.css";
+import React, { useState, useEffect, useRef } from 'react';
+import '../styles/ChatInterface.css';
 
-const ChatbotInterface = () => {
-  const [messages, setMessages] = useState([
-    { id: 1, text: "Hi there! How can I help you today?", sender: "bot" },
-  ]);
-  const [inputMessage, setInputMessage] = useState("");
-  const [loading, setLoading] = useState(false);
-  const messagesEndRef = useRef(null);
+const ChatInterface = () => {
+  const [messages, setMessages] = useState([]);
+  const [inputText, setInputText] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const messageEndRef = useRef(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    // Scroll to bottom when messages change
+    messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const fetchBotResponse = async (message) => {
+  useEffect(() => {
+    // Add welcome message when component mounts
+    setMessages([
+      {
+        text: 'Hello! I\'m your AI assistant. How can I help you today?',
+        sender: 'bot',
+        timestamp: new Date().toISOString()
+      }
+    ]);
+  }, []);
+
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+    
+    if (!inputText.trim()) return;
+    
+    const userMessage = {
+      text: inputText,
+      sender: 'user',
+      timestamp: new Date().toISOString()
+    };
+    
+    setMessages(prev => [...prev, userMessage]);
+    setInputText('');
+    setIsLoading(true);
+    
     try {
-      const response = await axios.post("http://localhost:5275/api/chatbot", {
-        message,
+      const response = await fetch('http://localhost:5275/api/chatbot/query', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: inputText })
       });
-      return response.data.reply;
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      
+      const data = await response.json();
+      
+      const botMessage = {
+        text: data.response,
+        sender: 'bot',
+        intent: data.intent,
+        confidence: data.confidence,
+        timestamp: new Date().toISOString()
+      };
+      
+      setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      console.error("Error fetching bot response:", error);
-      return "Sorry, I couldn't process that.";
+      console.error('Error:', error);
+      
+      const errorMessage = {
+        text: 'Sorry, I encountered an error processing your request. Please try again later.',
+        sender: 'bot',
+        error: true,
+        timestamp: new Date().toISOString()
+      };
+      
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
     }
-  };
-
-  const handleSendMessage = async () => {
-    if (inputMessage.trim() === "" || loading) return;
-
-    const userMessage = { id: messages.length + 1, text: inputMessage, sender: "user" };
-    setMessages((prev) => [...prev, userMessage]);
-    setInputMessage("");
-    setLoading(true);
-
-    const botReply = await fetchBotResponse(inputMessage);
-    const botMessage = { id: messages.length + 2, text: botReply, sender: "bot" };
-
-    setMessages((prev) => [...prev, botMessage]);
-    setLoading(false);
   };
 
   return (
     <div className="chat-container">
-      <div className="chat-header">Chatbot</div>
-      <div className="chat-messages">
-        {messages.map((msg) => (
-          <div
-            key={msg.id}
-            className={`chat-message ${msg.sender === "bot" ? "bot-message" : "user-message"}`}
+      <div className="chat-header">
+        <h2>AI Assistant</h2>
+      </div>
+      
+      <div className="messages-container">
+        {messages.map((message, index) => (
+          <div 
+            key={index} 
+            className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'} ${message.error ? 'error-message' : ''}`}
           >
-            {msg.text}
+            <div className="message-content">{message.text}</div>
+            <div className="message-timestamp">
+              {new Date(message.timestamp).toLocaleTimeString()}
+              {message.intent && (
+                <span className="message-intent">
+                  Intent: {message.intent} ({(message.confidence * 100).toFixed(1)}%)
+                </span>
+              )}
+            </div>
           </div>
         ))}
-        <div ref={messagesEndRef} />
+        
+        {isLoading && (
+          <div className="message bot-message loading-message">
+            <div className="loading-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        )}
+        
+        <div ref={messageEndRef} />
       </div>
-      <div className="chat-footer">
+      
+      <form className="chat-input-form" onSubmit={handleSendMessage}>
         <input
-          value={inputMessage}
-          onChange={(e) => setInputMessage(e.target.value)}
-          placeholder="Type your message..."
-          onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-          className="chat-input"
-          disabled={loading}
+          type="text"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          placeholder="Type your message here..."
+          disabled={isLoading}
         />
-        <button onClick={handleSendMessage} className="chat-button" disabled={loading}>
-          {loading ? "..." : <Send className="h-4 w-4" />}
+        <button type="submit" disabled={isLoading || !inputText.trim()}>
+          Send
         </button>
-      </div>
+      </form>
     </div>
   );
 };
 
-export default ChatbotInterface;
+export default ChatInterface;

@@ -1,4 +1,43 @@
-Question	Answer
-What is your refund policy?	We offer a full refund within 30 days of purchase.
-How to reset my password?	You can reset your password by clicking "Forgot Password" on the login page.
-Where is your company located?	We are based in San Francisco, California.
+Intent	Text
+Greeting	hello
+Greeting	hi
+Greeting	hey there
+Greeting	good morning
+Greeting	good afternoon
+Greeting	good evening
+Greeting	howdy
+Greeting	what's up
+Farewell	goodbye
+Farewell	bye
+Farewell	see you later
+Farewell	have a nice day
+Farewell	talk to you later
+Farewell	until next time
+Help	help
+Help	I need assistance
+Help	can you help me
+Help	how do I use this
+Help	what can you do
+Help	what are your features
+ProductInfo	what products do you offer
+ProductInfo	tell me about your products
+ProductInfo	product information
+ProductInfo	product details
+ProductInfo	product pricing
+ProductInfo	how much does your product cost
+ServiceInfo	what services do you offer
+ServiceInfo	tell me about your services
+ServiceInfo	service information
+ServiceInfo	service details
+ServiceInfo	service pricing
+ServiceInfo	how much do your services cost
+SupportRequest	I have a problem
+SupportRequest	something is not working
+SupportRequest	I need technical support
+SupportRequest	my account is locked
+SupportRequest	I can't log in
+SupportRequest	error message
+None	asdfghjkl
+None	qwertyuiop
+None	random text
+None	test test test

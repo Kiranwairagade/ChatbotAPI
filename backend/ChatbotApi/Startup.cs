@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ChatbotAPI.Services;
+using ChatbotApi.Services;  // ✅ Corrected namespace
 
-namespace ChatbotAPI
+namespace ChatbotApi  // ✅ Ensure this matches your project namespace
 {
     public class Startup
     {
@@ -12,7 +12,7 @@ namespace ChatbotAPI
         {
             services.AddControllers();
             services.AddSingleton<ChatbotService>();
-            services.AddCors(options => options.AddPolicy("AllowAll", builder => 
+            services.AddCors(options => options.AddPolicy("AllowAll", builder =>
                 builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
         }
 

@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\MLModel\\chatbot_model.zip\\obj\\Debug\\net8.0\\MLModelTrainer.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MLModel\\chatbot_model.zip\\obj\\Debug\\net8.0\\MLModelTrainer.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\ChatbotApi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ChatbotApi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\Data\\data.tsv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\data.tsv||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MLModelTrainer.AssemblyInfo.cs",
-              "DocumentMoniker": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\MLModel\\chatbot_model.zip\\obj\\Debug\\net8.0\\MLModelTrainer.AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "MLModel\\chatbot_model.zip\\obj\\Debug\\net8.0\\MLModelTrainer.AssemblyInfo.cs",
-              "ToolTip": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\MLModel\\chatbot_model.zip\\obj\\Debug\\net8.0\\MLModelTrainer.AssemblyInfo.cs",
-              "RelativeToolTip": "MLModel\\chatbot_model.zip\\obj\\Debug\\net8.0\\MLModelTrainer.AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAABYMDMzMzP7vw4AAAACAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAsAAACQmZmZmZkuwBYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T08:03:24.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChatbotApi.csproj",
-              "DocumentMoniker": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\ChatbotApi.csproj",
-              "RelativeDocumentMoniker": "ChatbotApi.csproj",
-              "ToolTip": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\ChatbotApi.csproj",
-              "RelativeToolTip": "ChatbotApi.csproj",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAwAsAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-29T07:42:21.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "data.tsv",
-              "DocumentMoniker": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\Data\\data.tsv",
-              "RelativeDocumentMoniker": "Data\\data.tsv",
-              "ToolTip": "F:\\Aarkay\\ChatbotAPI\\backend\\ChatbotApi\\Data\\data.tsv",
-              "RelativeToolTip": "Data\\data.tsv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-29T04:53:52.462Z",
+              "WhenOpened": "2025-03-29T11:42:17.578Z",
               "EditorCaption": ""
             }
           ]

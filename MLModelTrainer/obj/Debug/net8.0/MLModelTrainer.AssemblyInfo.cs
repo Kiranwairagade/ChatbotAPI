@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MLModelTrainer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f96daef67f7fe786a05b1513bd864cda7d19c091")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6f19300dddfc99f44766dee2e0d0b823c54bc7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MLModelTrainer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MLModelTrainer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

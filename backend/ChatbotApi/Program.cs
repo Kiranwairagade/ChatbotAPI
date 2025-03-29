@@ -1,20 +1,46 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+﻿using ChatbotApi;
+using ChatbotApi.Services;
 
-namespace ChatbotAPI
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Register the ChatbotService as a singleton
+builder.Services.AddSingleton<ChatbotService>(serviceProvider => {
+    var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+    var modelPath = configuration.GetValue<string>("ModelPath") ?? "chatbot_model.zip";
+    return new ChatbotService(modelPath);
+});
+
+// Configure CORS
+builder.Services.AddCors(options =>
 {
-    public class Program
+    options.AddPolicy("AllowReactApp", policy =>
     {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+        policy.WithOrigins("http://localhost:3000") // Ensure this matches your React app's URL
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+var app = builder.Build();
+
+// Configure the HTTP request pipeline
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+
+// Apply CORS Middleware before authorization
+app.UseCors("AllowReactApp");
+
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();

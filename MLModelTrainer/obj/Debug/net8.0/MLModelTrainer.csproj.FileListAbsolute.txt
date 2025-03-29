@@ -33,3 +33,10 @@ F:\Aarkay\ChatbotAPI\MLModelTrainer\obj\Debug\net8.0\refint\MLModelTrainer.dll
 F:\Aarkay\ChatbotAPI\MLModelTrainer\obj\Debug\net8.0\MLModelTrainer.pdb
 F:\Aarkay\ChatbotAPI\MLModelTrainer\obj\Debug\net8.0\MLModelTrainer.genruntimeconfig.cache
 F:\Aarkay\ChatbotAPI\MLModelTrainer\obj\Debug\net8.0\ref\MLModelTrainer.dll
+F:\Aarkay\ChatbotAPI\MLModelTrainer\bin\Debug\net8.0\Microsoft.ML.FastTree.dll
+F:\Aarkay\ChatbotAPI\MLModelTrainer\bin\Debug\net8.0\System.Numerics.Tensors.dll
+F:\Aarkay\ChatbotAPI\MLModelTrainer\bin\Debug\net8.0\runtimes\win-arm64\native\LdaNative.dll
+F:\Aarkay\ChatbotAPI\MLModelTrainer\bin\Debug\net8.0\runtimes\linux-x64\native\libFastTreeNative.so
+F:\Aarkay\ChatbotAPI\MLModelTrainer\bin\Debug\net8.0\runtimes\osx-x64\native\libFastTreeNative.dylib
+F:\Aarkay\ChatbotAPI\MLModelTrainer\bin\Debug\net8.0\runtimes\win-x64\native\FastTreeNative.dll
+F:\Aarkay\ChatbotAPI\MLModelTrainer\bin\Debug\net8.0\runtimes\win-x86\native\FastTreeNative.dll
