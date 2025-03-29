@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Controllers",
-    "\\Data",
-    "\\Models",
-    "\\Services"
+    ""
   ],
+  "SelectedNode": "\\ChatbotApi.csproj",
   "PreviewInSolutionExplorer": false
 }
